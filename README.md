@@ -57,7 +57,6 @@ pip install torch torchvision pillow matplotlib scikit-learn
 ### Step 1: Download dataset
 
 Download the **Cats vs Dogs dataset** from one of the following:
-
 * Microsoft: https://www.microsoft.com/en-us/download/details.aspx?id=54765
 
 ---
