@@ -58,7 +58,6 @@ pip install torch torchvision pillow matplotlib scikit-learn
 
 Download the **Cats vs Dogs dataset** from one of the following:
 
-* Kaggle: https://www.kaggle.com/c/dogs-vs-cats/data
 * Microsoft: https://www.microsoft.com/en-us/download/details.aspx?id=54765
 
 ---
