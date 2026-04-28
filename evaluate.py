@@ -7,7 +7,7 @@ import numpy as np
 from models.pretrained_model import get_pretrained_model
 
 # Paths
-TEST_DIR = "/content/cats-vs-dogs-dl-project/data/test"
+TEST_DIR = "data/test"
 
 # Transform
 transform = transforms.Compose([

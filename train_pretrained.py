@@ -8,7 +8,7 @@ import os
 from models.pretrained_model import get_pretrained_model
 
 # Paths
-BASE_DIR = "/content/cats-vs-dogs-dl-project/data"
+BASE_DIR = "data"
 TRAIN_DIR = os.path.join(BASE_DIR, "train")
 VAL_DIR = os.path.join(BASE_DIR, "val")
 
