@@ -47,16 +47,53 @@ def evaluate_multiclass_model(model, checkpoint, loader, device):
     return y_true, y_pred
 
 
+import matplotlib.pyplot as plt
+import seaborn as sns
+import os
+
 def print_results(name, y_true, y_pred):
     from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 
+    acc = accuracy_score(y_true, y_pred)
+    prec = precision_score(y_true, y_pred, zero_division=0)
+    rec = recall_score(y_true, y_pred, zero_division=0)
+    f1 = f1_score(y_true, y_pred, zero_division=0)
+    cm = confusion_matrix(y_true, y_pred)
+
     print(f"\n===== {name} =====")
-    print(f"Accuracy:  {accuracy_score(y_true, y_pred):.4f}")
-    print(f"Precision: {precision_score(y_true, y_pred, zero_division=0):.4f}")
-    print(f"Recall:    {recall_score(y_true, y_pred, zero_division=0):.4f}")
-    print(f"F1-score:  {f1_score(y_true, y_pred, zero_division=0):.4f}")
+    print(f"Accuracy:  {acc:.4f}")
+    print(f"Precision: {prec:.4f}")
+    print(f"Recall:    {rec:.4f}")
+    print(f"F1-score:  {f1:.4f}")
     print("Confusion Matrix:")
-    print(confusion_matrix(y_true, y_pred))
+    print(cm)
+
+    os.makedirs("results", exist_ok=True)
+
+    plt.figure(figsize=(6, 5))
+    sns.heatmap(
+        cm,
+        annot=True,
+        fmt="d",
+        cmap="Blues",
+        xticklabels=["cat", "dog"],
+        yticklabels=["cat", "dog"],
+        annot_kws={"size": 16, "weight": "bold"}
+    )
+
+    plt.title(f"{name} Confusion Matrix\nAccuracy: {acc:.2%} | F1-score: {f1:.2f}", fontsize=14, weight="bold")
+    plt.xlabel("Predicted Label", fontsize=12)
+    plt.ylabel("True Label", fontsize=12)
+    plt.xticks(fontsize=11)
+    plt.yticks(fontsize=11, rotation=0)
+    plt.tight_layout()
+
+    filename = name.lower().replace(" ", "_").replace("-", "") + "_confusion_matrix.png"
+    path = os.path.join("results", filename)
+    plt.savefig(path, dpi=300, bbox_inches="tight")
+    plt.close()
+
+    print(f"Saved confusion matrix to {path}")
 
 
 def main():
