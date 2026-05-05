@@ -11,7 +11,7 @@ class SimpleCNN(nn.Module):
         # 2. ReLU to add non-linearity
         # 3. MaxPool to reduce image size
         self.features = nn.Sequential(
-             # First convolution block:
+            # First convolution block:
             # Input has 3 channels because images are RGB
             # Output has 32 feature maps, so the model learns 32 basic filters.
             # These early filters usually learn simple patterns like edges and colors.

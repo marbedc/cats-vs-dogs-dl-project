@@ -21,7 +21,7 @@ def main():
     model = SimpleCNN(dropout=0.5).to(device)
 
     # Loss function for binary classification.
-    # This works with one output logit.
+    # This works with one output logit(raw output values of final layer).
     criterion = nn.BCEWithLogitsLoss()
 
     # Adam optimizer updates the model weights.
