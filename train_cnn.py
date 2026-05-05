@@ -1,5 +1,6 @@
 #This file runs the full CNN training process. It loads the data, creates the CNN, 
-# sets the loss function and optimizer, trains for 5 epochs, and saves the best model.
+# sets the loss function and optimizer, trains for 5 epochs, and saves the best model as "best_cnn.pth"
+#which stores the saved weights of the best CNN model based on validation accuracy. This file is not code, but it is the trained model output.
 import torch
 import torch.nn as nn
 import torch.optim as optim
