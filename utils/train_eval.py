@@ -1,3 +1,5 @@
+#This file contains reusable training and evaluation functions. It trains the model for one epoch, 
+# calculates loss and accuracy, and evaluates performance on validation/test data.
 import torch
 
 def train_one_epoch(model, loader, criterion, optimizer, device):

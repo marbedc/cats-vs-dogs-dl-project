@@ -1,3 +1,5 @@
+#This file defines the CNN architecture. It contains the convolution layers that extract image features and the fully connected layers 
+# #that classify the image as cat or dog.
 import torch.nn as nn
 
 #  goal: to classify an image as either a cat or a dog

@@ -1,3 +1,5 @@
+#This file runs the full CNN training process. It loads the data, creates the CNN, 
+# sets the loss function and optimizer, trains for 5 epochs, and saves the best model.
 import torch
 import torch.nn as nn
 import torch.optim as optim

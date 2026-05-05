@@ -1,3 +1,5 @@
+#This file loads the image dataset using PyTorch. It also applies preprocessing and data augmentation,
+# such as resizing, flipping, rotating, converting to tensors, and normalization.
 import os
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
