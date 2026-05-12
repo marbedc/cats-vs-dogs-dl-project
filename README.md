@@ -130,7 +130,7 @@ This will:
 ```
 python train_pretrained.py
 ```
-
+* Google Collab Link: https://colab.research.google.com/drive/1VLYem35bl6aFnp383L524-KEGpIyWyVP?usp=sharing
 ---
 
 ## Evaluation
